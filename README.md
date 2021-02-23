@@ -1,12 +1,23 @@
 # base-next-js
 
-Aqui está oq é preciso para rodar um projeto React com Next.js, verifique se possui as dependências/ferramentas instaladas para rodar os comandos sem problemas. https://www.notion.so/Rodando-React-com-Next-js-5772b3a8566f400db61c52ffb22c29b1
+Here is what it takes to run a project in React with Next.js
+Make sure you have the dependencies or tools installed to run the commands smoothly:
 
+Created by Will Mascarello
+## Introdution
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
 
-First, run the development server:
+First, instal dependences:
+
+```bash
+npm i
+# or
+yarn
+```
+
+Second, run the development server:
 
 ```bash
 npm run dev
