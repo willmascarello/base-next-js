@@ -1,12 +1,56 @@
+import React from "react";
+import Head from 'next/head'
+import { GetServerSideProps } from 'next'
+
 import { ComponentToUse } from "../components/ComponentToUse";
+import { NameGeralProvider } from "../context/NameGeralContext";
+
+import styles from "../styles/pages/Home.module.css"
+import { NameProvider } from "../context/NameContext";
 // This is the main and start page of the App
 
+interface HomeProps {
+  variable: number;
+  isActive: boolean;
+  consoleAlert: () => {};
+}
 
-export default function Home() {
+export default function Home(props) {
   return (
-    <div className="container">
-      <h1>This is the Home Page</h1>
-      <ComponentToUse />
-    </div>
+    
+    <NameGeralProvider 
+    variable={props.variable}
+    isActive={props.isActive}
+    >
+
+      <div className={styles.container}>
+        
+        <Head>
+          <title>Home | Base</title>
+        </Head>
+        
+        <NameProvider>
+          <div>
+            <h1>This is the Home Page</h1>
+            <ComponentToUse />
+          </div>
+        </NameProvider>
+
+
+      </div>
+
+    </NameGeralProvider>
   )
+}
+
+export const getServerSideProps: GetServerSideProps = async (ctx) => {
+
+  const {variable, isActive} = ctx.req.cookies;
+  
+  return {
+    props: {
+      variable: Number(variable),
+      isActive: Boolean(isActive)
+    }
+  }
 }

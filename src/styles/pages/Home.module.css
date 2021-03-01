@@ -1,0 +1,5 @@
+/* visible only in the page Home or Index */
+
+.div {
+    color: var(--title);
+  }

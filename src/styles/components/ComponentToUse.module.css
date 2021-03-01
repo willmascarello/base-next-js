@@ -1,0 +1,11 @@
+/* visible only in the component ComponentToUse */
+.btn.true {
+  color: var(--blue);
+  border-radius: 20px;
+}
+
+.btn__false {
+  color: var(--red);
+  border-radius: 10px;
+}
+
