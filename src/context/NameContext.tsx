@@ -30,7 +30,6 @@ export function NameProvider({children}: NameProviderProps) {
     } else {
       setIsActive(true);
       console.log('-----  is active -----')
-      alert('Hello there 🙋')
     }
 
   }

@@ -9,14 +9,27 @@ export function ComponentToUse() {
     const {isActive, functionActive} = useContext(NameContext); 
 
     return (
-        <header>
+        <header className={styles.container}>
             <h2 >Component to Use in the App</h2>
             <p  className={styles.text}>
                 Text in Component
             </p>
-            <button type="button" onClick={functionActive} className={styles.btn} >
-                Show Alert: {String(isActive)}
-            </button>
+            { isActive ? (
+                <div>
+                    <button type="button" onClick={functionActive} className={styles.btn__active} >
+                        Show Hello: {String(isActive)}
+                    </button>
+                    <p>Hello there 🙋</p>
+                </div>
+
+            ) :
+            (
+                <button type="button" onClick={functionActive} className={styles.btn__notActive} >
+                    Show Hello: {String(isActive)}
+                </button>
+            )
+
+            }
         </header>
     )
 }

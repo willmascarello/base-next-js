@@ -30,7 +30,7 @@ export default function Home(props) {
         </Head>
         
         <NameProvider>
-          <div>
+          <div className={styles.container}>
             <h1>This is the Home Page</h1>
             <ComponentToUse />
           </div>
@@ -43,14 +43,3 @@ export default function Home(props) {
   )
 }
 
-export const getServerSideProps: GetServerSideProps = async (ctx) => {
-
-  const {variable, isActive} = ctx.req.cookies;
-  
-  return {
-    props: {
-      variable: Number(variable),
-      isActive: Boolean(isActive)
-    }
-  }
-}
